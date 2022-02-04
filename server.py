@@ -1,11 +1,12 @@
 '''
 Author: BDFD
 Date: 2022-02-03 15:32:30
-LastEditTime: 2022-02-03 15:33:19
+LastEditTime: 2022-02-04 12:55:40
 LastEditors: BDFD
 Description: 
-FilePath: \flask-framework\app.py
+FilePath: \Heroku_Python_Template\server.py
 '''
+from pickle import TRUE
 from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
@@ -18,5 +19,17 @@ def index():
 def about():
   return render_template('about.html')
 
+@app.route('/blog')
+def blog():
+  posts = [
+    {'title':'Technology in 2019', 'author':'avi'},
+    {'title':'China is stronger than ever', 'author':'david'}
+  ]
+  return render_template(
+    'blog.html', 
+    author = 'bdfd', 
+    sunny = True, 
+    posts=posts)
+
 if __name__ == '__main__':
-  app.run(port=5000)
+  app.run()

@@ -1,0 +1,37 @@
+<!--
+ * @Author: BDFD
+ * @Date: 2022-02-04 12:42:47
+ * @LastEditTime: 2022-02-04 12:57:08
+ * @LastEditors: BDFD
+ * @Description: 
+ * @FilePath: \Heroku_Python_Template\templates\blog.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Blog Page</h2>
+    <p>Hello Msg From {{ author }}</p>
+
+    {% if sunny %}
+    <p>Today is sunny</p>
+    {% else %}
+    <p>Today is rainy</p>
+    {% endif %}
+    <div>
+        {% for post in posts %}
+        <h2>{{post.title}}</h2>
+        <h3>{{post.author}}</h3>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
