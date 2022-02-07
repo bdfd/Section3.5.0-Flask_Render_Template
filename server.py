@@ -1,7 +1,7 @@
 '''
 Author: BDFD
 Date: 2022-02-03 15:32:30
-LastEditTime: 2022-02-04 14:49:54
+LastEditTime: 2022-02-04 15:06:29
 LastEditors: BDFD
 Description: 
 FilePath: \Heroku_Python_Template\server.py
@@ -41,7 +41,7 @@ def signup():
   form = SignUpForm()
   if form.is_submitted():
     result = request.form
-    print(result)
+    print('Hello World, result is',result)
     return render_template('user.html', result=result)
   return render_template('signup.html', form=form)
 
