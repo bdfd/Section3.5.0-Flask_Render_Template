@@ -1,7 +1,7 @@
 '''
 Author: BDFD
 Date: 2022-02-03 15:32:30
-LastEditTime: 2022-02-11 13:42:15
+LastEditTime: 2022-02-11 14:11:00
 LastEditors: BDFD
 Description: 
 FilePath: \Heroku_Python_Template\server.py
@@ -10,7 +10,7 @@ FilePath: \Heroku_Python_Template\server.py
 # from pickle import TRUE
 # from unittest import result
 # from uuid import RESERVED_FUTURE
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for, flash
 from Component.forms import SignUpForm
 
 app = Flask(__name__)
@@ -51,11 +51,29 @@ def upload():
 
 
 @app.route('/upload/success', methods=['POST'])
-def success():
+def upload_success():
     if request.method == 'POST':
         f = request.files['file']
         f.save(f.filename)
         return render_template('function/upload/upload_success.html', name=f.filename)
+
+@app.route('/login')
+def login():
+    return render_template('function/login/login.html')
+
+
+@app.route('/login/validate', methods=['POST'])
+def login_validate():
+    if request.method == 'POST' and request.form['email'] == 'test@gmail.com' and request.form['password'] == 'test':
+        return redirect(url_for('login_success'))
+    else:
+      flash('Incorrect Username/Password')
+      return redirect(url_for('login'))
+    
+
+@app.route('/login/success')
+def login_success():
+    return 'Logged in successfully.'
 
 if __name__ == '__main__':
   app.run()
