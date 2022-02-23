@@ -1,7 +1,7 @@
 <!--
  * @Author: BDFD
  * @Date: 2022-02-23 11:12:18
- * @LastEditTime: 2022-02-23 18:42:43
+ * @LastEditTime: 2022-02-23 18:52:46
  * @LastEditors: BDFD
  * @Description:
  * @FilePath: \Heroku_Python_Template\.github\pull_request_template.md
@@ -11,7 +11,7 @@
 Please search 🔎 among the [open pull requests][open-prs] before creating one.
 
 Updating the code? Also send a PR to
-[`bdfd/3.1-PYPI_TEMPLATE!`][open-prs]
+[`bdfd/Heroku_Python_Template!`][open-prs]
 
 Now that you've checked, it's time to create your PR. 📝
 Thanks for submitting! 🙏
