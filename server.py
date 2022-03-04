@@ -1,7 +1,7 @@
 '''
 Author: BDFD
 Date: 2022-02-03 15:32:30
-LastEditTime: 2022-02-11 14:11:00
+LastEditTime: 2022-03-04 12:24:24
 LastEditors: BDFD
 Description: 
 FilePath: \Heroku_Python_Template\server.py
@@ -10,6 +10,8 @@ FilePath: \Heroku_Python_Template\server.py
 # from pickle import TRUE
 # from unittest import result
 # from uuid import RESERVED_FUTURE
+from distutils.debug import DEBUG
+from doctest import debug
 from flask import Flask, render_template, request, redirect, url_for, flash
 from Component.forms import SignUpForm
 
@@ -74,6 +76,10 @@ def login_validate():
 @app.route('/login/success')
 def login_success():
     return 'Logged in successfully.'
+
+@app.route('/test/<name>')
+def test(name):
+  return render_template("test.html",author=name, contents=["Bill","Tom","Alex"])
 
 if __name__ == '__main__':
   app.run()
