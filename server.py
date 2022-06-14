@@ -1,7 +1,7 @@
 '''
 Author: BDFD
 Date: 2022-02-03 15:32:30
-LastEditTime: 2022-06-10 12:53:50
+LastEditTime: 2022-06-14 10:49:30
 LastEditors: BDFD
 Description: 
 FilePath: \Heroku_Python_Template\server.py
@@ -79,10 +79,10 @@ def login_success():
 
 @app.route('/test/<name>')
 def test(name):
-  return render_template("test.html",author=name, contents=["Bill","Tom","Alex"])
+  return render_template('test.html',author=name, contents=['Bill','Tom','Alex'])
 
 def home():
-  return 'Welcome to home!'
+  return render_template('home.html')
 app.add_url_rule('/home','home',home)
 
 @app.route('/home/<int:age>')
@@ -94,4 +94,4 @@ def home_name(name):
   return render_template('home_name.html',name=name)
 
 if __name__ == '__main__':
-  app.run()
+  app.run(debug=True)
