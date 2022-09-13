@@ -1,10 +1,22 @@
 '''
-Author: BDFD
-Date: 2022-02-03 15:32:30
-LastEditTime: 2022-06-14 10:49:30
-LastEditors: BDFD
-Description: 
-FilePath: \Heroku_Python_Template\server.py
+Date         : 2022-09-12 17:17:50
+Author       : BDFD,bdfd2005@gmail.com
+Github       : https://github.com/bdfd
+LastEditTime : 2022-09-13 10:30:00
+LastEditors  : BDFD
+Description  : 
+FilePath     : \server.py
+Copyright (c) 2022 by BDFD, All Rights Reserved. 
+'''
+'''
+Date         : 2022-09-12 17:17:50
+Author       : BDFD,bdfd2005@gmail.com
+Github       : https://github.com/bdfd
+LastEditTime : 2022-09-13 10:19:55
+LastEditors  : BDFD
+Description  : 
+FilePath     : \server.py
+Copyright (c) 2022 by BDFD, All Rights Reserved. 
 '''
 # from crypt import methods
 # from pickle import TRUE
@@ -12,10 +24,12 @@ FilePath: \Heroku_Python_Template\server.py
 # from uuid import RESERVED_FUTURE
 from distutils.debug import DEBUG
 from doctest import debug
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, Blueprint, render_template, request, redirect, url_for, flash
 from Component.forms import SignUpForm
+from backend.register import register
 
 app = Flask(__name__)
+app.register_blueprint(register, url_prefix="/register")
 app.config['SECRET_KEY']= 'bdfd2005'
 
 @app.route('/')
