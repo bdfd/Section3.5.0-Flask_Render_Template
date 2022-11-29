@@ -1,23 +1,14 @@
 '''
-Date         : 2022-09-12 17:17:50
+Date         : 2022-11-29 15:11:49
 Author       : BDFD,bdfd2005@gmail.com
 Github       : https://github.com/bdfd
-LastEditTime : 2022-09-13 10:30:00
+LastEditTime : 2022-11-29 15:12:19
 LastEditors  : BDFD
 Description  : 
 FilePath     : \server.py
 Copyright (c) 2022 by BDFD, All Rights Reserved. 
 '''
-'''
-Date         : 2022-09-12 17:17:50
-Author       : BDFD,bdfd2005@gmail.com
-Github       : https://github.com/bdfd
-LastEditTime : 2022-09-13 10:19:55
-LastEditors  : BDFD
-Description  : 
-FilePath     : \server.py
-Copyright (c) 2022 by BDFD, All Rights Reserved. 
-'''
+
 # from crypt import methods
 # from pickle import TRUE
 # from unittest import result
